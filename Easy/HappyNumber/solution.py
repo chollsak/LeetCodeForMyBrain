@@ -1,13 +1,5 @@
 def separate_digits(number):
-    number_str = str(number)
-    
-    digits = []
-    
-    for digit in number_str:
-
-        digits.append(int(digit))
-    
-    return digits
+    return [int(digit) for digit in str(number)]
 
 class Solution(object):
     def isHappy(self, n):
@@ -16,28 +8,16 @@ class Solution(object):
         :rtype: bool
         """
         def get_next(number):
-            """
-            :type number: int
-            :rtype: int
-            """
-            number_str = str(number)
-            
-            sum_of_squares = 0
-            
-            for digit in number_str:
-
-                sum_of_squares += int(digit) ** 2
-            
-            return sum_of_squares
+            # Compute the next number by summing the squares of its digits
+            return sum(int(digit)**2 for digit in str(number))
         
         seen = set()
-        
         while n != 1 and n not in seen:
             seen.add(n)
-
             n = get_next(n)
         
         return n == 1
+
 
 sol = Solution()
 print(sol.isHappy(7)) 
