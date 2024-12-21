@@ -19,8 +19,6 @@ class Solution:
                 result += " "
 
         return result
-            
-
         
 s = Solution()
 print(s.decodeMessage("the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv"))
