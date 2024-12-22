@@ -11,7 +11,7 @@ class Solution:
             if complement in tempArr: 
                 firstIndex = tempArr.index(complement)
                 result.append(firstIndex)
-                result.append(index)
+                result.append(index) 
                 return result
         
             tempArr.append(val) 
